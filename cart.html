@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YZY VNYL — BAG</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body id="page-cart">
+
+    <header id="main-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">YZY VNYL</a>
+            <nav>
+                <a href="index.html">ГЛАВНАЯ</a>
+                <a href="catalog.html">КАТАЛОГ</a>
+                <a href="about.html">О ПРОЕКТЕ</a>
+                <a href="cart.html" class="active" aria-current="page">
+                    КОРЗИНА [<span id="cart-count">0</span>]
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="cart-container">
+        <h1 class="page-title">YOUR BAG</h1>
+
+        <div class="cart-layout">
+            
+            <section class="cart-items-section">
+                <div id="cart-items-wrapper">
+                    <p class="loading-text">LOADING BAG DATA...</p>
+                </div>
+
+                <div id="cart-empty-state" class="hidden">
+                    <p>YOUR BAG IS EMPTY.</p>
+                    <a href="catalog.html" class="cta-link">GO TO CATALOG</a>
+                </div>
+            </section>
+
+            <aside class="cart-summary-section">
+                <h2>ORDER SUMMARY</h2>
+                
+                <div class="summary-row">
+                    <span>SUBTOTAL</span>
+                    <span id="cart-subtotal">0$</span> 
+                </div>
+                
+                <div class="summary-row">
+                    <span>SHIPPING</span>
+                    <span>CALCULATED AT NEXT STEP</span>
+                </div>
+
+                <div class="promo-code">
+                    <input type="text" placeholder="PROMO CODE" id="promo-input">
+                    <button id="apply-promo">APPLY</button>
+                </div>
+
+                <hr class="divider">
+
+                <div class="summary-total">
+                    <span>TOTAL</span>
+                    <span id="cart-total">0$</span> 
+                </div>
+
+                <button id="checkout-btn" class="checkout-btn">PROCEED TO CHECKOUT</button>
+                
+                <p class="secure-note">SECURE CHECKOUT</p>
+            </aside>
+
+        </div>
+    </main>
+
+    <footer id="main-footer">
+        <div class="footer-content">
+            <p>© 2026 YZY VNYL. NO BOXES.</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

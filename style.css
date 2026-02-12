@@ -1,0 +1,617 @@
+/* =========================================
+   1. VARIABLES & RESET (BASE)
+   ========================================= */
+   :root {
+    --bg-color: #f5f5f5;      /* "Сырой" серый фон */
+    --card-bg: #ffffff;
+    --text-main: #000000;
+    --text-secondary: #555555;
+    --accent: #000000;
+    --border-color: #000000;
+    
+    --font-heading: 'Archivo Black', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    
+    /* Структура для прижатия футера */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+    /* ГЛАВНОЕ: Отступ сверху, равный высоте шапки.
+       Иначе заголовок будет под шапкой. */
+    padding-top: 90px; 
+}
+
+/* Это заставляет контент толкать футер вниз */
+main, .home-container, .product-container, .about-container, .cart-container {
+    flex: 1; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Общие классы */
+.cta-button {
+    background: var(--text-main);
+    color: var(--card-bg);
+    border: none;
+    padding: 1rem 2rem;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s;
+    display: inline-block;
+    text-align: center;
+}
+
+.cta-button:hover {
+    background: transparent;
+    color: var(--text-main);
+    outline: 2px solid var(--text-main);
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 2rem 0;
+}
+
+/* =========================================
+   2. HEADER & FOOTER (GLOBAL)
+   ========================================= */
+#main-header {
+    background: var(--bg-color);
+    border-bottom: 2px solid var(--border-color);
+    padding: 1.5rem 2rem;
+    
+    /* ИСПРАВЛЕНИЕ: Делаем шапку фиксированной */
+    position: fixed; 
+    top: 0;
+    left: 0;         /* Прижимаем к левому краю */
+    width: 100%;     /* Растягиваем на всю ширину */
+    
+    z-index: 1000;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+nav a.active {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+#main-footer {
+    flex-shrink: 0; /* Запрещаем футеру сжиматься */
+    background: var(--text-main);
+    color: var(--card-bg);
+    padding: 3rem 2rem;
+    margin-top: auto;
+    text-align: center;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    position: relative; /* Чтобы он лежал слоем правильно */
+    z-index: 10;
+}
+
+/* =========================================
+   3. PAGE: HOME (index.html) - ОБНОВЛЕНО
+   ========================================= */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80vh; /* Растягиваем на экран */
+}
+
+.hero-section {
+    padding-top: 6rem; /* Было 4rem */
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    /* Остальное без изменений */
+    text-align: left;
+    background: var(--bg-color);
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    /* СИЛЬНО уменьшаем: минимум 20px, предпочитаем 4% от ширины, максимум 60px */
+    font-size: clamp(1.5rem, 4vw, 3.5rem); 
+    line-height: 1.1; /* Чуть больше воздуха между строк, чтобы не слипалось */
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: var(--text-main);
+    word-wrap: break-word; /* На всякий случай, чтобы не ломал ширину */
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    max-width: 600px;
+}
+
+.hero-actions {
+    max-width: 300px;
+}
+
+/* Секция тизеров внизу главной */
+.teaser-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 3rem 2rem;
+    border-top: 1px solid #ccc;
+    margin-top: auto; /* Прижимаем к низу контейнера */
+    max-width: 1440px;
+    width: 100%;
+    align-self: center;
+}
+
+.teaser-item h3 {
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.teaser-item p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+/* =========================================
+   4. PAGE: CATALOG (catalog.html)
+   ========================================= */
+.catalog-layout {
+    display: flex;
+    flex: 1; /* Растягивается */
+    /* УДАЛЕНО: min-height: 100vh; - ИМЕННО ЭТО ЛОМАЛО ВЁРСТКУ */
+    width: 100%;
+}
+
+#filter-sidebar {
+    width: 250px;
+    padding: 2rem;
+    border-right: 2px solid var(--border-color);
+    background: var(--bg-color);
+}
+
+.sidebar-sticky {
+    position: sticky;
+    top: 100px;
+}
+
+.filter-title {
+    font-family: var(--font-heading);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-btn {
+    background: none;
+    border: 1px solid transparent;
+    text-align: left;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: var(--text-main);
+    color: var(--bg-color);
+}
+
+.catalog-main {
+    flex: 1;
+    padding: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 0px var(--text-main);
+}
+
+.img-wrapper {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+.product-card:hover img {
+    filter: grayscale(0%);
+}
+
+.card-info {
+    font-size: 1.2rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+}
+
+/* =========================================
+   5. PAGE: PRODUCT (product.html) - FIX
+   ========================================= */
+.product-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+/* Общий макет: две колонки */
+.product-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Делим экран пополам */
+    gap: 4rem; /* Расстояние между фото и инфо */
+    align-items: start;
+    /* ВАЖНО: Убираем все рамки с общего контейнера, если они были */
+    border: none !important; 
+}
+
+/* ЛЕВАЯ ЧАСТЬ: Блок для Фото */
+.main-image-wrapper {
+    width: 100%; /* Занимает доступное место, но... */
+    
+    /* НОВОЕ: Ограничиваем максимальный размер.
+       Меняй это число (например, 450px, 500px, 600px), чтобы настроить размер. */
+    max-width: 500px; 
+    
+    /* Чтобы квадрат оставался квадратным */
+    aspect-ratio: 1 / 1; 
+    
+    /* Рамка */
+    border: 2px solid var(--border-color);
+    
+    background: #f0f0f0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Если хочешь, чтобы на очень больших экранах уменьшенное фото
+       было прижато не влево, а по центру своей колонки, раскомментируй: */
+    /* margin: 0 auto; */
+}
+
+.main-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Заполняем квадрат картинкой, не искажая пропорции */
+    display: block;
+}
+
+/* ПРАВАЯ ЧАСТЬ: Информация */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    /* ВАЖНО: Убираем рамку у текстового блока */
+    border: none !important; 
+    color: var(--text-main);
+}
+
+.product-info h1 {
+    font-family: var(--font-heading);
+    /* Крупный шрифт заголовка */
+    font-size: clamp(2.5rem, 5vw, 4rem); 
+    line-height: 1;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.product-price {
+    font-size: 2rem;
+    font-family: var(--font-heading);
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+/* Стили для списков (характеристики и треки) */
+.specs-list, .tracklist {
+    margin-top: 2rem;
+    border-top: 2px solid var(--border-color); /* Жирная линия над списками */
+    padding-top: 1rem;
+}
+
+.specs-list li, .tracklist li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #aaaaaa; /* Тонкие линии между строками */
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+hr {
+    opacity: 0;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+    .product-layout {
+        grid-template-columns: 1fr; /* Одна колонка на телефоне */
+        gap: 2rem;
+    }
+    .main-image-wrapper {
+         /* На мобиле можно сделать чуть меньше, если нужно, но квадрат останется */
+        max-width: 100%; 
+    }
+}
+
+/* =========================================
+   6. PAGE: ABOUT (about.html)
+   ========================================= */
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.manifesto-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    line-height: 1;
+}
+
+.quote-section {
+    text-align: center;
+    padding: 4rem 0;
+    background: var(--text-main);
+    color: var(--bg-color);
+    
+    /* ИЗМЕНЕНИЕ: Делаем отступы сверху и снизу одинаковыми (по 2rem) */
+    margin: 1rem -2000px 1rem -2000px;
+    
+    padding-left: 2000px;
+    padding-right: 2000px;
+}
+
+.quote-section blockquote {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* ИСПРАВЛЕНИЕ: Жёстко тянем заголовок вверх к линии */
+.timeline-section {
+    padding-top: 0 !important;
+}
+
+.timeline-section h2 {
+    /* Отрицательное значение тянет элемент вверх на 25 пикселей */
+    margin-top: -1.5rem !important; 
+    padding-top: 0 !important;
+    margin-bottom: 2rem; /* Отступ снизу до первого года (2004) оставляем */
+}
+
+.timeline-item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    border-left: 2px solid var(--text-main);
+    padding-left: 2rem;
+}
+
+.timeline-item .year {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+}
+
+/* =========================================
+   7. PAGE: CART (cart.html)
+   ========================================= */
+.cart-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    padding: 2rem;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.cart-summary-section {
+    background: #fff;
+    padding: 2rem;
+    border: 2px solid var(--border-color);
+    height: fit-content;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.promo-code {
+    display: flex;
+    gap: 10px;
+    margin: 1.5rem 0;
+}
+
+.promo-code input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    font-family: var(--font-heading);
+}
+
+.summary-total {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+/* =========================================
+   8. RESPONSIVE (MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Index Home */
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    .teaser-section {
+        grid-template-columns: 1fr;
+    }
+
+    /* Catalog */
+    .catalog-layout {
+        flex-direction: column;
+    }
+    
+    #filter-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid var(--border-color);
+        padding: 1rem;
+    }
+
+    .filter-group {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+    
+    .filter-btn {
+        white-space: nowrap;
+    }
+
+    /* Product & Cart */
+    .product-layout, .cart-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .quote-section {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin: 2rem 0;
+    }
+}

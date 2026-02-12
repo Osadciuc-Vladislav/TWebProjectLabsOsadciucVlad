@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YZY VNYL — CATALOG</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="catalog.css">
+</head>
+<body id="page-catalog">
+
+    <header id="main-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">YZY VNYL</a>
+            <nav>
+                <a href="index.html">ГЛАВНАЯ</a>
+                <a href="catalog.html" class="active" aria-current="page">КАТАЛОГ</a>
+                <a href="about.html">О ПРОЕКТЕ</a>
+                <a href="cart.html" class="cart-btn">
+                    КОРЗИНА [<span id="cart-count">0</span>]
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="catalog-layout">
+        
+        <aside id="filter-sidebar">
+            <div class="sidebar-sticky">
+                <h3 class="filter-title">ERA / GENRE</h3>
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">ALL ARCHIVE</button>
+                    <button class="filter-btn" data-filter="soul">CHIPMUNK SOUL</button>
+                    <button class="filter-btn" data-filter="experimental">EXPERIMENTAL</button>
+                    <button class="filter-btn" data-filter="gospel">GOSPEL</button>
+                    <button class="filter-btn" data-filter="collab">COLLABS</button>
+                </div>
+            </div>
+        </aside>
+
+        <main class="catalog-main">
+            <div class="catalog-header-mobile">
+                <h1>CATALOG</h1>
+            </div>
+
+            <div id="product-grid" class="product-grid">
+                <div class="loader">
+                    LOADING VISUALS...
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer id="main-footer">
+        <div class="footer-content">
+            <p>© 2026 YZY VNYL. NO BOXES.</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
