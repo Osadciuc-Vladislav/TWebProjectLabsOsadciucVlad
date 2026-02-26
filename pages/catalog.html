@@ -8,16 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="catalog.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/catalog.css">
 </head>
 <body id="page-catalog">
 
     <header id="main-header">
         <div class="header-inner">
-            <a href="index.html" class="logo">YZY VNYL</a>
+            <a href="../index.html" class="logo">YZY VNYL</a>
             <nav>
-                <a href="index.html">ГЛАВНАЯ</a>
+                <a href="../index.html">ГЛАВНАЯ</a>
                 <a href="catalog.html" class="active" aria-current="page">КАТАЛОГ</a>
                 <a href="about.html">О ПРОЕКТЕ</a>
                 <a href="cart.html" class="cart-btn">
@@ -48,9 +48,133 @@
             </div>
 
             <div id="product-grid" class="product-grid">
-                <div class="loader">
-                    LOADING VISUALS...
-                </div>
+                
+                <article class="product-card" data-category="soul">
+                    <a href="product.html?id=1" class="card-link">
+                        <div class="img-wrapper">
+                            <img src="../assets/img/CollegeDropout.jpg" alt="THE COLLEGE DROPOUT" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                            <h3>THE COLLEGE DROPOUT</h3>
+                            <div class="card-bottom">
+                                <span>$70</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="product-card" data-category="soul">
+                    <a href="product.html?id=2" class="card-link">
+                        <div class="img-wrapper">
+                            <img src="../assets/img/LateReg.jpg" alt="LATE REGISTRATION" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                            <h3>LATE REGISTRATION</h3>
+                            <div class="card-bottom">
+                                <span>$80</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="product-card" data-category="soul">
+                    <a href="product.html?id=3" class="card-link">
+                        <div class="img-wrapper">
+                            <img src="../assets/img/Graduation.jpg" alt="GRADUATION" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                            <h3>GRADUATION</h3>
+                            <div class="card-bottom">
+                                <span>$85</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="product-card" data-category="experimental">
+                    <a href="product.html?id=4" class="card-link">
+                        <div class="img-wrapper">
+                            <img src="../assets/img/808s.jpg" alt="808s & HEARTBREAK" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                            <h3>808s & HEARTBREAK</h3>
+                            <div class="card-bottom">
+                                <span>$70</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="product-card" data-category="experimental">
+                    <a href="product.html?id=5" class="card-link">
+                        <div class="img-wrapper">
+                            <img src="../assets/img/MBDTF.jpg" alt="MY BEAUTIFUL DARK TWISTED FANTASY" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                            <h3>MY BEAUTIFUL DARK TWISTED FANTASY</h3>
+                            <div class="card-bottom">
+                                <span>$100</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="product-card" data-category="experimental">
+                    <a href="product.html?id=6" class="card-link">
+                        <div class="img-wrapper">
+                            <img src="../assets/img/Yeezus.jpg" alt="YEEZUS" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                            <h3>YEEZUS</h3>
+                            <div class="card-bottom">
+                                <span>$90</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="product-card" data-category="gospel">
+                    <a href="product.html?id=7" class="card-link">
+                        <div class="img-wrapper">
+                            <img src="../assets/img/TLOP.jpg" alt="THE LIFE OF PABLO" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                            <h3>THE LIFE OF PABLO</h3>
+                            <div class="card-bottom">
+                                <span>$80</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="product-card" data-category="gospel">
+                    <a href="product.html?id=8" class="card-link">
+                        <div class="img-wrapper">
+                            <img src="../assets/img/JIK.jpg" alt="JESUS IS KING" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                            <h3>JESUS IS KING</h3>
+                            <div class="card-bottom">
+                                <span>$65</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="product-card" data-category="collab">
+                    <a href="product.html?id=9" class="card-link">
+                        <div class="img-wrapper">
+                            <img src="../assets/img/V1.jpg" alt="VULTURES 1" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                            <h3>VULTURES 1</h3>
+                            <div class="card-bottom">
+                                <span>$70</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
             </div>
         </main>
     </div>
@@ -61,6 +185,6 @@
         </div>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script src="../assets/js/script.js" defer></script>
 </body>
 </html>

@@ -8,16 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/cart.css">
 </head>
 <body id="page-cart">
 
     <header id="main-header">
         <div class="header-inner">
-            <a href="index.html" class="logo">YZY VNYL</a>
+            <a href="../index.html" class="logo">YZY VNYL</a>
             <nav>
-                <a href="index.html">ГЛАВНАЯ</a>
+                <a href="../index.html">ГЛАВНАЯ</a>
                 <a href="catalog.html">КАТАЛОГ</a>
                 <a href="about.html">О ПРОЕКТЕ</a>
                 <a href="cart.html" class="active" aria-current="page">
@@ -28,7 +28,7 @@
     </header>
 
     <main class="cart-container">
-        <h1 class="page-title">YOUR BAG</h1>
+        <h1 class="page-title" style="font-family: var(--font-heading); text-align: center; margin: 2rem 0; font-size: 2.5rem;">YOUR BAG</h1>
 
         <div class="cart-layout">
             
@@ -38,17 +38,17 @@
                 </div>
 
                 <div id="cart-empty-state" class="hidden">
-                    <p>YOUR BAG IS EMPTY.</p>
-                    <a href="catalog.html" class="cta-link">GO TO CATALOG</a>
+                    <p style="margin-bottom: 1rem; font-family: var(--font-heading); font-size: 1.5rem;">YOUR BAG IS EMPTY.</p>
+                    <a href="catalog.html" class="cta-button">GO TO CATALOG</a>
                 </div>
             </section>
 
             <aside class="cart-summary-section">
-                <h2>ORDER SUMMARY</h2>
+                <h2 style="font-family: var(--font-heading); margin-bottom: 1.5rem;">ORDER SUMMARY</h2>
                 
                 <div class="summary-row">
                     <span>SUBTOTAL</span>
-                    <span id="cart-subtotal">0$</span> 
+                    <span id="cart-subtotal">$0</span> 
                 </div>
                 
                 <div class="summary-row">
@@ -58,19 +58,19 @@
 
                 <div class="promo-code">
                     <input type="text" placeholder="PROMO CODE" id="promo-input">
-                    <button id="apply-promo">APPLY</button>
+                    <button id="apply-promo" class="cta-button" style="padding: 0.5rem 1rem; font-size: 1rem; width: auto;">APPLY</button>
                 </div>
 
                 <hr class="divider">
 
                 <div class="summary-total">
                     <span>TOTAL</span>
-                    <span id="cart-total">0$</span> 
+                    <span id="cart-total">$0</span> 
                 </div>
 
-                <button id="checkout-btn" class="checkout-btn">PROCEED TO CHECKOUT</button>
+                <button id="checkout-btn" class="cta-button" style="margin-bottom: 1rem;">PROCEED TO CHECKOUT</button>
                 
-                <p class="secure-note">SECURE CHECKOUT</p>
+                <p class="secure-note" style="text-align: center; font-size: 0.8rem; color: var(--text-secondary);">SECURE CHECKOUT</p>
             </aside>
 
         </div>
@@ -82,6 +82,6 @@
         </div>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script src="../assets/js/script.js" defer></script>
 </body>
 </html>

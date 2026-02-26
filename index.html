@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body id="page-home">
 
@@ -17,9 +17,9 @@
             <a href="index.html" class="logo">YZY VNYL</a>
             <nav>
                 <a href="index.html" class="active">ГЛАВНАЯ</a>
-                <a href="catalog.html">КАТАЛОГ</a>
-                <a href="about.html">О ПРОЕКТЕ</a>
-                <a href="cart.html">КОРЗИНА (<span id="cart-count">0</span>)</a>
+                <a href="pages/catalog.html">КАТАЛОГ</a>
+                <a href="pages/about.html">О ПРОЕКТЕ</a>
+                <a href="pages/cart.html">КОРЗИНА (<span id="cart-count">0</span>)</a>
             </nav>
         </div>
     </header>
@@ -31,8 +31,14 @@
                 <h1 class="hero-title">NO BOXES.<br>NO LABELS.<br>JUST SOUND.</h1>
                 <p class="hero-subtitle">ПОЛНАЯ КОЛЛЕКЦИЯ ВИНИЛА / АРХИВ 2004–2024</p>
                 <div class="hero-actions">
-                    <a href="catalog.html" class="cta-button">ПЕРЕЙТИ В КАТАЛОГ</a>
+                    <a href="pages/catalog.html" class="cta-button">ПЕРЕЙТИ В КАТАЛОГ</a>
                 </div>
+            </div>
+
+            <div class="hero-video">
+                <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                    <source src="assets/img/index.mp4" type="video/mp4">
+                </video>
             </div>
         </section>
 

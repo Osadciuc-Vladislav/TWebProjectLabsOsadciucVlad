@@ -8,16 +8,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/product.css">
 </head>
 <body id="page-product">
 
     <header id="main-header">
         <div class="header-inner">
-            <a href="index.html" class="logo">YZY VNYL</a>
+            <a href="../index.html" class="logo">YZY VNYL</a>
             <nav>
-                <a href="catalog.html">КАТАЛОГ</a> <a href="cart.html" class="cart-btn">
+                <a href="../index.html">ГЛАВНАЯ</a>
+                <a href="catalog.html">КАТАЛОГ</a>
+                <a href="cart.html" class="cart-btn">
                     КОРЗИНА [<span id="cart-count">0</span>]
                 </a>
             </nav>
@@ -26,7 +28,7 @@
 
     <main class="product-container">
         <div class="breadcrumbs">
-            <a href="index.html">HOME</a> / 
+            <a href="../index.html">HOME</a> / 
             <a href="catalog.html">CATALOG</a> / 
             <span id="breadcrumb-title">LOADING...</span>
         </div>
@@ -34,19 +36,19 @@
         <div class="product-layout">
             <section class="product-gallery">
                 <div class="main-image-wrapper">
-                    <img id="main-product-img" src="img/placeholder.png" alt="Vinyl Cover" loading="lazy">
+                    <img id="main-product-img" src="../assets/img/placeholder.png" alt="Vinyl Cover" loading="lazy">
                 </div>
             </section>
 
             <section class="product-info">
                 <div class="info-header">
                     <h1 id="product-title">LOADING TITLE...</h1>
-                    <p class="product-price" id="product-price">--- ₽</p>
+                    <p class="product-price" id="product-price">$ ---</p>
                 </div>
 
                 <div class="actions">
                     <button id="add-to-cart-btn" class="cta-button">ДОБАВИТЬ В КОРЗИНУ</button>
-                    <p class="stock-status">IN STOCK / READY TO SHIP</p>
+                    <p class="stock-status" style="margin-top: 1rem; font-size: 0.9rem; text-transform: uppercase;">IN STOCK / READY TO SHIP</p>
                 </div>
 
                 <hr class="divider">
@@ -54,7 +56,7 @@
                 <div class="specs-container">
                     <h3>SPECIFICATIONS</h3>
                     <ul class="specs-list" id="product-specs">
-                        <li><strong>YEAR:</strong> <span id="spec-year">2024</span></li>
+                        <li><strong>YEAR:</strong> <span id="spec-year">...</span></li>
                         <li><strong>LABEL:</strong> <span id="spec-label">YZY</span></li>
                         <li><strong>CONDITION:</strong> MINT (SEALED)</li>
                     </ul>
@@ -78,6 +80,6 @@
         </div>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script src="../assets/js/script.js" defer></script>
 </body>
 </html>

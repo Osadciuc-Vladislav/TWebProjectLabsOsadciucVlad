@@ -1,0 +1,216 @@
+/* VARIABLES & RESET (BASE) */
+   :root {
+    --bg-color: #f5f5f5;      
+    --card-bg: #ffffff;
+    --text-main: #000000;
+    --text-secondary: #555555;
+    --accent: #000000;
+    --border-color: #000000;
+    
+    --font-heading: 'Archivo Black', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 90px; 
+}
+
+main, .home-container, .product-container, .about-container, .cart-container {
+    flex: 1; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 2rem 0;
+}
+
+/* HEADER & FOOTER (GLOBAL) */
+#main-header {
+    background: var(--bg-color);
+    border-bottom: 2px solid var(--border-color);
+    padding: 1.5rem 2rem;
+    position: fixed; 
+    top: 0;
+    left: 0;         
+    width: 100%;     
+    z-index: 1000;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+nav a.active {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+#main-footer {
+    flex-shrink: 0; 
+    background: var(--text-main);
+    color: var(--card-bg);
+    padding: 3rem 2rem;
+    margin-top: auto;
+    text-align: center;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    position: relative; 
+    z-index: 10;
+}
+
+/* PAGE: ABOUT (about.html) */
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.manifesto-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    line-height: 1;
+}
+
+.manifesto-text p {
+    margin-bottom: 1rem;
+}
+
+.quote-section {
+    text-align: center;
+    padding: 4rem 0;
+    background: var(--text-main);
+    color: var(--bg-color);
+    margin: 1rem -2000px 1rem -2000px;
+    padding-left: 2000px;
+    padding-right: 2000px;
+}
+
+.quote-section blockquote {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.timeline-section {
+    padding-top: 0 !important;
+}
+
+.timeline-section h2 {
+    margin-top: -1.5rem !important; 
+    padding-top: 0 !important;
+    margin-bottom: 2rem; 
+    font-family: var(--font-heading);
+}
+
+.timeline-item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    border-left: 2px solid var(--text-main);
+    padding-left: 2rem;
+}
+
+.timeline-item .year {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    min-width: 80px;
+}
+
+.timeline-content h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+/* 4. RESPONSIVE (MOBILE) */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .quote-section {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin: 2rem 0;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
