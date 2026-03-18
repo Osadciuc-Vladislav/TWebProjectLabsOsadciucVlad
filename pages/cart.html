@@ -51,9 +51,14 @@
                     <span id="cart-subtotal">$0</span> 
                 </div>
                 
-                <div class="summary-row">
+                <div class="summary-line" style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-family: var(--font-heading);">
                     <span>SHIPPING</span>
-                    <span>CALCULATED AT NEXT STEP</span>
+                    <select id="shipping-select" style="font-family: var(--font-heading); font-size: 0.9rem; padding: 2px; border: 2px solid #000; cursor: pointer;">
+                        <option value="0">SELECT COUNTRY...</option>
+                        <option value="15">USA (+$15)</option>
+                        <option value="25">EUROPE (+$25)</option>
+                        <option value="35">ASIA (+$35)</option>
+                    </select>
                 </div>
 
                 <div class="promo-code">

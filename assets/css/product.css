@@ -156,8 +156,20 @@ nav a.active {
 .breadcrumbs {
     margin-bottom: 2rem;
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    color: var(--text-main); /* Сделали основной текст черным */
     text-transform: uppercase;
+}
+
+.breadcrumbs a {
+    color: var(--text-main); /* Ссылки тоже черные */
+    text-decoration: none; /* Убираем стандартное подчеркивание браузера */
+    transition: opacity 0.2s ease; /* Плавный переход для эффекта наведения */
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline; /* Появляется подчеркивание */
+    text-underline-offset: 4px; /* Слегка отодвигаем линию вниз, чтобы выглядело стильнее */
+    opacity: 0.6; /* Текст слегка светлеет при наведении */
 }
 
 .product-layout {
