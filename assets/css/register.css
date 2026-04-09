@@ -1,0 +1,117 @@
+/* Специфические стили для страницы REGISTER */
+
+.auth-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+    background-color: var(--bg-color);
+}
+
+.auth-box {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    padding: 3rem;
+    width: 100%;
+    max-width: 500px; /* Чуть шире, так как полей может быть больше */
+    /* Тень в другую сторону для отличия от Login */
+    box-shadow: -10px 10px 0px var(--border-color); 
+}
+
+.auth-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    text-align: left; /* Асимметричный заголовок в стиле Канье */
+    letter-spacing: -2px;
+    line-height: 1;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.input-group label {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-main);
+}
+
+.input-group input {
+    padding: 1.2rem;
+    border: 2px solid var(--border-color);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    background: transparent;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.input-group input:focus,
+.input-group input:hover {
+    background: #f0f0f0;      
+    color: var(--text-main);   
+    border-color: var(--border-color); 
+}
+
+.auth-form .cta-button {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.auth-footer {
+    margin-top: 2.5rem;
+    text-align: left;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    border-top: 1px solid #ddd;
+    padding-top: 1.5rem;
+}
+
+.auth-footer p {
+    color: var(--text-secondary);
+}
+
+.auth-footer a {
+    color: var(--text-main);
+    font-family: var(--font-heading);
+    text-decoration: underline;     
+    text-underline-offset: 3px;
+    margin-left: 5px;
+    background: transparent;         
+    transition: opacity 0.2s;  
+}
+
+.auth-footer a:hover {
+    background: transparent;    
+    color: var(--text-main);        
+    opacity: 0.7;                   
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .auth-box {
+        padding: 2rem 1rem;
+        box-shadow: none; /* Убираем тени на мобилках для чистоты */
+        border: none;
+        background: transparent;
+    }
+    
+    .auth-title {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+}

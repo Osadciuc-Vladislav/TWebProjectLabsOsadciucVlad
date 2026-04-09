@@ -98,6 +98,8 @@ function initApp() {
     if (pageId === 'page-catalog') initCatalog();
     if (pageId === 'page-product') initProductPage();
     if (pageId === 'page-cart') initCartPage();
+    if (pageId === 'page-login') initLoginPage();
+    if (pageId === 'page-register') initRegisterPage();
     
     const subscribeForm = document.querySelector('.subscribe-form');
     if (subscribeForm) {
@@ -356,5 +358,27 @@ function updateCartCounter() {
     const countSpan = document.getElementById('cart-count');
     if (countSpan) {
         countSpan.innerText = cart.length; 
+    }
+}
+
+function initLoginPage() {
+    const loginForm = document.querySelector('.auth-form');
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('WELCOME BACK.');
+            window.location.href = '../index.html'; 
+        });
+    }
+}
+
+function initRegisterPage() {
+    const registerForm = document.querySelector('.auth-form');
+    if (registerForm) {
+        registerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('ACCOUNT CREATED. PROCEED TO LOGIN.');
+            window.location.href = 'login.html'; 
+        });
     }
 }
