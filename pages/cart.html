@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" href="../assets/css/cart.css">
 </head>
 <body id="page-cart">
@@ -17,7 +17,7 @@
         <div class="header-inner">
             <a href="../index.html" class="logo">YZY VNYL</a>
             <nav>
-                <a href="login.html">ВХОД</a>
+                <a href="account.html">ЛИЧНЫЙ КАБИНЕТ</a>
                 <a href="../index.html">ГЛАВНАЯ</a>
                 <a href="catalog.html">КАТАЛОГ</a>
                 <a href="about.html">О ПРОЕКТЕ</a>
@@ -29,7 +29,7 @@
     </header>
 
     <main class="cart-container">
-        <h1 class="page-title" style="font-family: var(--font-heading); text-align: center; margin: 2rem 0; font-size: 2.5rem;">YOUR BAG</h1>
+        <h1 class="page-title" style="font-family: var(--font-heading), sans-serif; text-align: center; margin: 2rem 0; font-size: 2.5rem;">YOUR BAG</h1>
 
         <div class="cart-layout">
             
@@ -39,30 +39,30 @@
                 </div>
 
                 <div id="cart-empty-state" class="hidden">
-                    <p style="margin-bottom: 1rem; font-family: var(--font-heading); font-size: 1.5rem;">YOUR BAG IS EMPTY.</p>
+                    <p style="margin-bottom: 1rem; font-family: var(--font-heading), sans-serif; font-size: 1.5rem;">YOUR BAG IS EMPTY.</p>
                     <a href="catalog.html" class="cta-button">GO TO CATALOG</a>
                 </div>
             </section>
 
             <aside class="cart-summary-section">
-                <h2 style="font-family: var(--font-heading); margin-bottom: 1.5rem;">ORDER SUMMARY</h2>
-                
+                <h2 style="font-family: var(--font-heading), sans-serif; margin-bottom: 1.5rem;">ORDER SUMMARY</h2>
+
                 <div class="summary-row">
                     <span>SUBTOTAL</span>
                     <span id="cart-subtotal">$0</span> 
                 </div>
                 
-                <div class="summary-line" style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-family: var(--font-heading);">
+                <div class="summary-line shipping-row">
                     <span>SHIPPING</span>
-                    <select id="shipping-select" style="font-family: var(--font-heading); font-size: 0.9rem; padding: 2px; border: 2px solid #000; cursor: pointer;">
-                        <option value="0">SELECT COUNTRY...</option>
-                        <option value="15">USA (+$15)</option>
-                        <option value="25">EUROPE (+$25)</option>
-                        <option value="35">ASIA (+$35)</option>
+                    <label for="shipping-select" class="sr-only">SHIPPING REGION</label>
+                    <select id="shipping-select" class="shipping-select">
+                        <option value="">SELECT REGION...</option>
                     </select>
                 </div>
+                <p id="shipping-error" class="shipping-error hidden">SELECT SHIPPING REGION BEFORE CHECKOUT.</p>
 
                 <div class="promo-code">
+                    <label for="promo-input" class="sr-only">PROMO CODE</label>
                     <input type="text" placeholder="PROMO CODE" id="promo-input">
                     <button id="apply-promo" class="cta-button" style="padding: 0.5rem 1rem; font-size: 1rem; width: auto;">APPLY</button>
                 </div>
@@ -81,6 +81,31 @@
 
         </div>
     </main>
+
+    <!-- Модальное окно для оформления заказа -->
+    <div id="checkout-modal" class="checkout-modal hidden">
+        <div class="checkout-modal__content">
+            <h2 class="checkout-modal__title">DELIVERY INFORMATION</h2>
+            <form id="checkout-form" class="checkout-form">
+                <div class="input-group">
+                    <label for="checkout-address">DELIVERY ADDRESS *</label>
+                    <input type="text" id="checkout-address" required placeholder="123 MAIN STREET">
+                </div>
+                <div class="input-group">
+                    <label for="checkout-postal">POSTAL CODE *</label>
+                    <input type="text" id="checkout-postal" required placeholder="10001">
+                </div>
+                <div class="input-group">
+                    <label for="checkout-notes">NOTES (OPTIONAL)</label>
+                    <textarea id="checkout-notes" placeholder="Any special instructions..."></textarea>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <button type="submit" class="cta-button" style="flex: 1;">PLACE ORDER</button>
+                    <button type="button" id="checkout-cancel" class="cta-button" style="flex: 1;">CANCEL</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <footer id="main-footer">
         <div class="footer-content">

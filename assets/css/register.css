@@ -101,6 +101,30 @@
     opacity: 0.7;                   
 }
 
+.form-divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1rem 0;
+}
+
+.edit-profile-form {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #ddd;
+}
+
+.edit-profile-form.hidden {
+    display: none;
+}
+
+.account-section-title {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
 /* RESPONSIVE */
 @media (max-width: 600px) {
     .auth-box {

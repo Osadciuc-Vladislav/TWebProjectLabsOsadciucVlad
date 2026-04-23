@@ -15,7 +15,7 @@
         <div class="header-inner">
             <a href="../index.html" class="logo">YZY VNYL</a>
             <nav>
-                <a href="login.html" class="active">ВХОД</a>
+                <a href="account.html" class="active">ЛИЧНЫЙ КАБИНЕТ</a>
                 <a href="../index.html">ГЛАВНАЯ</a>
                 <a href="catalog.html">КАТАЛОГ</a>
                 <a href="about.html">О ПРОЕКТЕ</a>
@@ -39,6 +39,23 @@
                 <div class="input-group">
                     <label for="password">ПАРОЛЬ</label>
                     <input type="password" id="password" required placeholder="••••••••">
+                </div>
+                <div class="input-group">
+                    <label for="confirmPassword">ПОДТВЕРДИТЕ ПАРОЛЬ</label>
+                    <input type="password" id="confirmPassword" required placeholder="••••••••">
+                </div>
+                <hr class="form-divider">
+                <div class="input-group">
+                    <label for="phone">ТЕЛЕФОН (ОПЦИОНАЛЬНО)</label>
+                    <input type="tel" id="phone" placeholder="+1 234 567 8900">
+                </div>
+                <div class="input-group">
+                    <label for="city">ГОРОД (ОПЦИОНАЛЬНО)</label>
+                    <input type="text" id="city" placeholder="NEW YORK">
+                </div>
+                <div class="input-group">
+                    <label for="country">СТРАНА (ОПЦИОНАЛЬНО)</label>
+                    <input type="text" id="country" placeholder="USA">
                 </div>
                 <button type="submit" class="cta-button">СОЗДАТЬ АККАУНТ</button>
             </form>
