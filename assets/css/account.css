@@ -1,0 +1,180 @@
+/* Специфические стили страницы ACCOUNT без переопределения auth-box/auth-container.
+   Базовый вид окна задается login.css, как на входе и регистрации. */
+
+body#page-account .auth-box {
+    max-width: 980px;
+}
+
+.account-profile {
+    display: grid;
+    gap: 0.85rem;
+    padding: 1.5rem;
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+    margin-bottom: 2rem;
+}
+
+.account-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.account-line strong,
+.account-section-title {
+    font-family: var(--font-heading), sans-serif;
+    text-transform: uppercase;
+}
+
+.account-label {
+    font-family: var(--font-heading), sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.account-logout {
+    width: fit-content;
+    padding-inline: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.account-orders {
+    display: grid;
+    gap: 1rem;
+}
+
+.account-section-title {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.account-empty,
+.loading-text,
+.empty-msg {
+    padding: 1rem 0;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.orders-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.order-card {
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+    padding: 1.25rem 1.5rem;
+    display: grid;
+    gap: 1rem;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.16);
+}
+
+.order-card__top {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.order-card__top h3 {
+    font-family: var(--font-heading), sans-serif;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
+    overflow-wrap: anywhere;
+}
+
+.order-card__top p,
+.order-card__meta {
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.order-card__top strong {
+    font-family: var(--font-heading), sans-serif;
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+
+.order-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.account-edit {
+    width: fit-content;
+    padding-inline: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.edit-profile-form {
+    display: grid;
+    gap: 1.2rem;
+    padding: 1.5rem;
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+    margin-bottom: 2rem;
+}
+
+.edit-profile-form.hidden {
+    display: none !important;
+}
+
+.edit-profile-form .account-section-title {
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+}
+
+.edit-profile-form button {
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.edit-profile-form button[type="button"] {
+    background: var(--text-main);
+    color: var(--card-bg);
+    border: 1px solid var(--text-main);
+}
+
+.edit-profile-form button[type="button"]:hover {
+    background: transparent;
+    color: var(--text-main);
+}
+
+@media (max-width: 768px) {
+
+    .account-profile {
+        padding: 1rem;
+    }
+
+    .order-card,
+    .account-profile {
+        box-shadow: none;
+    }
+
+    .order-card__top,
+    .order-card__meta {
+        flex-direction: column;
+    }
+
+    .account-logout {
+        width: 100%;
+    }
+}

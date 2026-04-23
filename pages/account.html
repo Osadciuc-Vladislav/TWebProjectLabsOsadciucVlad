@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YZY VNYL — ACCOUNT</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="stylesheet" href="../assets/css/account.css">
+</head>
+<body id="page-account">
+
+    <header id="main-header">
+        <div class="header-inner">
+            <a href="../index.html" class="logo">YZY VNYL</a>
+            <nav>
+                <a href="account.html" class="active" aria-current="page">ЛИЧНЫЙ КАБИНЕТ</a>
+                <a href="../index.html">ГЛАВНАЯ</a>
+                <a href="catalog.html">КАТАЛОГ</a>
+                <a href="about.html">О ПРОЕКТЕ</a>
+                <a href="cart.html">КОРЗИНА [<span id="cart-count">0</span>]</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-box">
+            <h1 class="auth-title">ЛИЧНЫЙ КАБИНЕТ</h1>
+            <div id="account-profile" class="account-profile">
+                <p class="account-line"><strong>ПОЛЬЗОВАТЕЛЬ:</strong> <span id="account-username">—</span></p>
+                <p class="account-line"><span class="account-label">EMAIL:</span> <span id="account-email">—</span></p>
+                <p class="account-line"><strong>ТЕЛЕФОН:</strong> <span id="account-phone">Не указано</span></p>
+                <p class="account-line"><strong>ГОРОД:</strong> <span id="account-city">Не указано</span></p>
+                <p class="account-line"><strong>СТРАНА:</strong> <span id="account-country">Не указано</span></p>
+                <button id="edit-profile-btn" class="cta-button account-edit" type="button">РЕДАКТИРОВАТЬ ПРОФИЛЬ</button>
+                <button id="logout-btn" class="cta-button account-logout" type="button">ВЫЙТИ</button>
+            </div>
+
+            <div id="edit-profile-form" class="edit-profile-form hidden">
+                <h2 class="account-section-title">РЕДАКТИРОВАТЬ ПРОФИЛЬ</h2>
+                <form class="auth-form">
+                    <div class="input-group">
+                        <label for="edit-username">ИМЯ ПОЛЬЗОВАТЕЛЯ</label>
+                        <input type="text" id="edit-username" placeholder="YOUR USERNAME">
+                    </div>
+                    <div class="input-group">
+                        <label for="edit-phone">ТЕЛЕФОН (ОПЦИОНАЛЬНО)</label>
+                        <input type="tel" id="edit-phone" placeholder="+1 234 567 8900">
+                    </div>
+                    <div class="input-group">
+                        <label for="edit-city">ГОРОД (ОПЦИОНАЛЬНО)</label>
+                        <input type="text" id="edit-city" placeholder="NEW YORK">
+                    </div>
+                    <div class="input-group">
+                        <label for="edit-country">СТРАНА (ОПЦИОНАЛЬНО)</label>
+                        <input type="text" id="edit-country" placeholder="USA">
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <button type="submit" class="cta-button" style="flex: 1;">СОХРАНИТЬ</button>
+                        <button type="button" id="cancel-edit-btn" class="cta-button" style="flex: 1;">ОТМЕНИТЬ</button>
+                    </div>
+                </form>
+            </div>
+
+            <section class="account-orders">
+                <h2 class="account-section-title">ВАШИ ЗАКАЗЫ</h2>
+                <div id="orders-empty" class="hidden account-empty">
+                    <p>ПОКА ЗАКАЗОВ НЕТ.</p>
+                </div>
+                <div id="orders-list" class="orders-list"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer id="main-footer">
+        <div class="footer-content">
+            <p>© 2026 YZY VNYL. NO BOXES.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js" defer></script>
+</body>
+</html>
+
